@@ -1,0 +1,136 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+// custom variables
+$primary: #fb5830;
+$secondary: #d0021c;
+$input-font-size: 0.8rem;
+
+// Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// modify map
+$font-sizes: map-merge(
+  $font-sizes,
+  (
+    7: $font-size-base * 0.8,
+    8: $font-size-base * 0.7
+  )
+);
+
+$utilities-text-colors: map-merge(
+  $utilities-text-colors,
+  (
+    "gray-700": $gray-700
+  )
+);
+
+$utilities-bg-colors: map-merge(
+  $utilities-bg-colors,
+  (
+    "line": #f97160,
+    "gray-200": $gray-200
+  )
+);
+
+@import "../node_modules/bootstrap/scss/utilities";
+// modify utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "width":
+      map-merge(
+        map-get($utilities, "width"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "width"), "values"),
+              (
+                "50p": 50px,
+                "2p": 2px
+              )
+            )
+        )
+      ),
+    "height":
+      map-merge(
+        map-get($utilities, "height"),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "height"), "values"),
+              (
+                "80p": 80px
+              )
+            )
+        )
+      )
+  )
+);
+
+// rename utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "margin-start":
+      map-merge(
+        map-get($utilities, "margin-start"),
+        (
+          class: ml
+        )
+      ),
+    "margin-end":
+      map-merge(
+        map-get($utilities, "margin-end"),
+        (
+          class: mr
+        )
+      ),
+    "start":
+      map-merge(
+        map-get($utilities, "start"),
+        (
+          class: left
+        )
+      ),
+    "end":
+      map-merge(
+        map-get($utilities, "end"),
+        (
+          class: right
+        )
+      )
+  )
+);
+
+// add utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "cursor": (
+      responsive: true,
+      property: cursor,
+      class: cursor,
+      values: pointer
+    ),
+    "transform": (
+      responsive: true,
+      property: transform,
+      values: (
+        rotate-180: rotate(180deg)
+      )
+    ),
+    "transition": (
+      responsive: true,
+      property: transition,
+      values: (
+        transform: transform 0.2s
+      )
+    )
+  )
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
