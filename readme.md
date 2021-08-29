@@ -1,4 +1,4 @@
-# 概述
+# Overview
 
 以 bootstrap 5 實做一個電商網站切版  
 內容涵蓋
@@ -14,3 +14,17 @@
 - card
 - button
 - icon
+
+# Result Image
+
+### PC
+
+![pc](./image/pc.png)
+
+### RWD
+
+![mobile](./image/mobile.png)
+
+# Result Preview
+
+https://bs5-e-commerce-v2asault-yahoocomtw.vercel.app/
